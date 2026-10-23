@@ -15,7 +15,7 @@ public class Main {
         GestorSesionUI gestor = new GestorSesionUI("Teléfono", "Correo de contacto", "Laboratorio");
 
 
-        System.out.println("--- CASO 1. PATRÓN DE NAVEGACIÓN (BREADCRUMBS + TABS) ---");
+        System.out.println(" Caso 1: patrón de navegación ");
         navegador.mostrarRuta();
         navegador.cambiarPestana("Catálogo");
         navegador.mostrarRuta();
@@ -26,7 +26,7 @@ public class Main {
         navegador.mostrarRuta();
 
 
-        System.out.println("\n--- CASO 2. PATRÓN DE CONTENIDO Y ESTRUCTURA (PROGRESSIVE DISCLOSURE) ---");
+        System.out.println("\n Caso 2: contenido y estructura");
         tarjeta.setVerAvanzado(false);
         tarjeta.mostrar();
         System.out.println("[Usuario solicita ver detalles avanzados...]");
@@ -34,7 +34,7 @@ public class Main {
         tarjeta.mostrar();
 
 
-        System.out.println("\n--- CASO 3. PATRÓN DE ENTRADA DE DATOS (FORGIVING FORMAT) ---");
+        System.out.println("\nCaso 3: Patron de entrada de datos");
         String entradaTel = "+57 (310) 999-8877";
         System.out.println("Entrada del usuario: \"" + entradaTel + "\"");
         System.out.println("Teléfono normalizado sin error: \""
@@ -45,7 +45,7 @@ public class Main {
                 + validador.normalizarFecha(entradaFecha) + "\"");
 
 
-        System.out.println("\n--- CASO 4. PATRÓN DE FEEDBACK Y ESTADO (COMPLETENESS METER) ---");
+        System.out.println("\n Caso 4: Patron de Sesión y Progreso");
         gestor.mostrarProgreso();
         gestor.completarCampo("Teléfono", validador.normalizarTelefono(entradaTel));
         gestor.mostrarProgreso();
@@ -57,7 +57,7 @@ public class Main {
         gestor.mostrarProgreso();
 
    
-        System.out.println("\n--- CASO 5. LAZY REGISTRATION + TOAST ---");
+        System.out.println("\n Caso 5: Patron de Sesión y Progreso con borrador");
         System.out.println("Usuario intenta guardar sin haber iniciado sesión (usuarioActivo = false)...");
         gestor.guardarReserva();
         gestor.registroRapido();
@@ -65,7 +65,7 @@ public class Main {
         gestor.guardarReserva();
 
 
-        System.out.println("\n--- EXTRA. SALIDAS DIRECTAS (CERO DARK PATTERNS) ---");
+        System.out.println("\n Salidas directas");
         System.out.println("Usuario cancela la reserva (un solo paso):");
         gestor.cancelarReserva();
         System.out.println("Usuario cierra sesión (un solo paso):");
